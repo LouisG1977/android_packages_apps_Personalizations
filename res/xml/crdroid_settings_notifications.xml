@@ -50,6 +50,13 @@
         android:title="@string/notification_guts_kill_app_button_title"
         android:summary="@string/notification_guts_kill_app_button_summary" />
 
+    <com.crdroid.settings.preferences.SystemSettingListPreference
+        android:key="toast_animation"
+        android:title="@string/toast_animation_title"
+        android:entries="@array/toast_animation_entries"
+        android:entryValues="@array/toast_animation_values"
+        android:persistent="false" />
+
     <!-- Show clipboard overlay -->
     <com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="show_clipboard_overlay"
