@@ -70,6 +70,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String DEFAULT = "_default";
     private static final String VOLTE_ICON_STYLE = "volte_icon_style";
     private static final String VOWIFI_ICON_STYLE = "vowifi_icon_style";
+    private static final String TEXT_CHARGING_SYMBOL = "text_charging_symbol";
 
     private static final int PULLDOWN_DIR_NONE = 0;
     private static final int PULLDOWN_DIR_RIGHT = 1;
@@ -87,6 +88,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private SwitchPreferenceCompat mBatteryTextCharging;
     private SystemSettingListPreference mVolteIconStyle;
     private SystemSettingListPreference mVowifiIconStyle;
+    private SystemSettingListPreference mChargingSymbol;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -169,6 +171,9 @@ public class StatusBar extends SettingsPreferenceFragment implements
         CustomSeekBarPreference topSeekbar = findPreference(KEY_STATUSBAR_TOP_PADDING);
         int defaultTopPadding = getResources().getDimensionPixelSize(com.android.internal.R.dimen.status_bar_padding_top);
         topSeekbar.setDefaultValue(defaultTopPadding, true);
+
+        mChargingSymbol = (SystemSettingListPreference) findPreference("text_charging_symbol");
+        mChargingSymbol.setEnabled(batterystyle == BATTERY_STYLE_TEXT);
     }
 
     @Override
@@ -189,6 +194,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
                     Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT, UserHandle.USER_CURRENT);
             mBatteryTextCharging.setEnabled(batterystyle == BATTERY_STYLE_HIDDEN ||
                     (batterystyle != BATTERY_STYLE_TEXT && value != 2));
+            mChargingSymbol.setEnabled(value == BATTERY_STYLE_TEXT);
             return true;
         } else if (preference == mQuickPulldown) {
             int value = Integer.parseInt((String) newValue);
@@ -255,6 +261,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.VOWIFI_ICON_STYLE, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.VOLTE_ICON_STYLE, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.TEXT_CHARGING_SYMBOL, 1, UserHandle.USER_CURRENT);
         BatteryBar.reset(mContext);
         Clock.reset(mContext);
         NetworkTrafficSettings.reset(mContext);
