@@ -1980,4 +1980,11 @@
     <string name="keyguard_batterybar_white">Default white</string>
     <string name="keyguard_batterybar_accent">Accent Color</string>
     <string name="keyguard_batterybar_custom">Custom</string>
+
+    <!-- Power menu Animations  -->
+    <string name="power_menu_animation_title">Power menu animation</string>
+    <string name="power_menu_animation_dialog_title">Select power menu animation</string>
+    <string name="power_menu_animation_aosp">AOSP (default)</string>
+    <string name="power_menu_animation_bottom">Bottom</string>
+    <string name="power_menu_animation_top">Top</string>
 </resources>
