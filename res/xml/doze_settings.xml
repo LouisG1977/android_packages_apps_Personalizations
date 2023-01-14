@@ -60,8 +60,14 @@
         android:title="@string/edge_light_title"
         android:summary="@string/edge_light_summary"
         android:fragment="com.crdroid.settings.fragments.ui.doze.EdgeLightSettings"
-        android:dependency="doze_for_notifications"
-        app:position="bottom" />
+        android:dependency="doze_for_notifications" />
+
+    <com.android.settings.preferences.ui.AdaptivePreference
+         android:key="ambient_customization"
+         android:title="@string/ambient_text_category_title"
+         android:summary="@string/ambient_text_category_summary"
+         android:fragment="com.crdroid.settings.fragments.AmbientCustomizations"
+         app:position="bottom" />
 
     <PreferenceCategory
         android:key="doze_sensor"
