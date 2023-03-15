@@ -169,8 +169,15 @@
           android:key="android.theme.customization.bb_style"
           android:title="@string/theme_customization_brightness_bar_title"
           android:summary="@string/theme_customization_brightness_bar_summary"
-          android:fragment="com.crdroid.settings.fragments.ui.BrightnessBarStyles"
-          lineage:position="bottom"/>
+          android:fragment="com.crdroid.settings.fragments.ui.BrightnessBarStyles" />
+
+       <!-- Brightness TextView-->
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:title="@string/bb_show_percentage_title"
+            android:key="show_brightness_bar_percentage"
+            android:summary="@string/bb_show_percentage_summary"
+            android:defaultValue="false"
+            lineage:position="bottom"/>
     </PreferenceCategory>
 
     <PreferenceCategory

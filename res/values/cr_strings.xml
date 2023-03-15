@@ -1765,4 +1765,8 @@
     <!-- Enable all props -->
     <string name="all_props_title">Enable spoof options</string>
     <string name="all_props_summary">Enables all the spoof options within the PixelProps</string>
+
+    <!-- Text Brightness -->
+    <string name="bb_show_percentage_title">Brightness percentage</string>
+    <string name="bb_show_percentage_summary">Show brightness percentage text in brightness bar</string>
 </resources>
