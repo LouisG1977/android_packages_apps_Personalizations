@@ -150,8 +150,15 @@
             android:key="smart_pixels"
             android:title="@string/smart_pixels_title" 
             android:summary="@string/smart_pixels_summary" 
-            android:fragment="com.crdroid.settings.fragments.ui.SmartPixels"
-            app:position="bottom" />
+            android:fragment="com.crdroid.settings.fragments.ui.SmartPixels"/>
+
+        <com.android.settings.preferences.ui.AdaptivePreference
+    	   android:key="hide_developer_status_settings"
+           android:title="@string/hide_developer_status_title"
+           android:summary="@string/hide_developer_status_summary"
+           android:fragment="com.android.settings.security.HideDeveloperStatusSettings"
+           settings:controller="com.android.settings.security.HideDeveloperStatusPreferenceController"          
+           app:position="bottom" />
 
     </PreferenceCategory>
 
