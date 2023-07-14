@@ -157,29 +157,28 @@
             android:title="@string/qs_show_auto_brightness_title"
             android:summary="@string/qs_show_auto_brightness_summary"
             android:defaultValue="true"
-            lineage:isLineageSettings="true"
-            lineage:position="bottom" />
+            lineage:isLineageSettings="true"/>
 
+       <!-- Brightness bar style -->
+       <com.android.settings.preferences.ui.AdaptivePreference
+          android:key="android.theme.customization.bb_style"
+          android:title="@string/theme_customization_brightness_bar_title"
+          android:summary="@string/theme_customization_brightness_bar_summary"
+          android:fragment="com.crdroid.settings.fragments.ui.BrightnessBarStyles"
+          lineage:position="bottom"/>
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="qs_layout_category"
         android:title="@string/qs_layout_category_title">
 
-        <com.android.settings.preferences.ui.AdaptiveListPreference
-            android:key="qs_tile_ui_style"
-            android:title="@string/qs_tile_ui_style_title"
-            android:entries="@array/qs_tile_ui_style_entries"
-            android:entryValues="@array/qs_tile_ui_style_values"
-            android:defaultValue="0"
+        <!-- QS panel style -->
+        <com.android.settings.preferences.ui.AdaptivePreference
+            android:key="android.theme.customization.qs_style"
+            android:title="@string/theme_customization_qs_style_title"
+            android:summary="@string/theme_customization_qs_style_summary"
+            android:fragment="com.crdroid.settings.fragments.ui.QsPanelStyles"
             lineage:position="top" />
-
-        <com.android.settings.preferences.ui.AdaptiveListPreference
-            android:key="qs_panel_style"
-            android:title="@string/qs_panel_style_title"
-            android:entries="@array/qs_panel_style_entries"
-            android:entryValues="@array/qs_panel_style_values"
-            android:defaultValue="0" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_tile_label_hide"
