@@ -459,6 +459,8 @@
     <string name="theme_customization_lock_clock_summary">Set lockscreen clock font style</string>
     <string name="theme_customization_brightness_slider_title">Brightness slider style</string>
     <string name="theme_customization_brightness_slider_summary">Set custom brightness slider style</string>
+    <string name="theme_customization_data_title">Data icon style</string>
+    <string name="theme_customization_data_summary">Set custom data icon style</string>
 
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Default refresh rate</string>
