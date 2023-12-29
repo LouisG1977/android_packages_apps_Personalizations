@@ -1675,6 +1675,8 @@
     <!-- Statusbar Clock color and font -->
     <string name="status_bar_clock_font_style_title">Clock font style</string>
     <string name="status_bar_clock_color_title">Clock font color</string>
+    <string name="status_bar_custom_clock_color_title">Custom clock color</string>
+    <string name="status_bar_custom_clock_color_summary">Clock color</string>
 
     <!-- Font Customizations for Functions -->
     <string name="function_font_stock">Normal (default)</string>
