@@ -55,8 +55,23 @@
         android:key="show_clipboard_overlay"
         android:title="@string/show_clipboard_overlay_title"
         android:summary="@string/show_clipboard_overlay_summary"
-        android:defaultValue="true"
-        lineage:position="bottom"/>
+        android:defaultValue="true"/>
+
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+         android:key="notif_panel_custom_notif"
+         android:title="@string/notif_panel_maxnotif_title"
+         android:summary="@string/notif_panel_maxnotif_summary"
+         android:defaultValue="false" />
+
+    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+         android:key="notif_panel_max_notif_cofig"
+         android:title="@string/notif_panel_maxnotif_config"
+         android:max="6"
+         settings:min="1"
+         settings:units=""
+         android:persistent="false"
+         android:dependency="notif_panel_custom_notif"
+         lineage:position="bottom"/>
 
     <PreferenceCategory
         android:key="heads_up"
