@@ -37,7 +37,7 @@ import com.crdroid.settings.utils.AdaptivePreferenceUtils;
 
 public class CustomSeekBarPreference extends Preference implements SeekBar.OnSeekBarChangeListener {
     protected final String TAG = getClass().getName();
-    private static final String SETTINGS_NS = "http://schemas.android.com/apk/res/com.android.settings";
+    private static final String SETTINGS_NS = "http://schemas.android.com/apk/res-auto";
     protected static final String ANDROIDNS = "http://schemas.android.com/apk/res/android";
 
     protected int mInterval = 1;
@@ -218,7 +218,7 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
     }
 
     protected int getSeekValue(int v) {
-        return 0 - Math.floorDiv(mMinValue - v, mInterval);
+        return (v - mMinValue) / mInterval;
     }
 
     protected String getTextValue(int v) {

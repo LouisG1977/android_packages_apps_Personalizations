@@ -58,7 +58,6 @@
 
         <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
             android:key="qs_header_clock_size"
-            android:icon="@drawable/ic_font"
             android:title="@string/clock_font_size_title"
             android:max="27"
             settings:min="10"
@@ -186,20 +185,29 @@
             android:fragment="com.crdroid.settings.fragments.ui.QsPanelStyles"
             lineage:position="top" />
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <!-- <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_tile_label_hide"
             android:title="@string/qs_tile_label_hide_title"
             android:summary="@string/qs_tile_label_hide_summary"
-            android:defaultValue="false" />
+            android:defaultValue="false" /> -->
 
         <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
             android:key="qs_tile_label_size"
             android:title="@string/qs_tile_label_size_title"
-            android:max="15"
-            settings:min="10"
+            android:max="20"
+            settings:min="0"
             settings:interval="1"
             settings:units="sp"
-            android:defaultValue="14" />
+            android:defaultValue="15" />
+
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="qs_tile_secondary_label_size"
+            android:title="@string/qs_tile_secondary_label_size_title"
+            android:max="18"
+            settings:min="0"
+            settings:interval="1"
+            settings:units="sp"
+            android:defaultValue="13" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_tile_vertical_layout"
