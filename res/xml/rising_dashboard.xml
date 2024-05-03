@@ -35,6 +35,20 @@
                  android:targetClass="com.crdroid.settings.fragments.about.ChangelogActivity"/>
         </com.android.settings.preferences.ui.AdaptivePreference>
 
+        <!-- Statusbar -->
+        <com.android.settings.preferences.ui.AdaptivePreference
+            android:icon="@drawable/ic_settings_statusbar"
+            android:title="@string/sb_settings_title"
+            android:summary="@string/sb_settings_summary"
+            android:fragment="com.crdroid.settings.fragments.StatusBar" />
+
+         <!-- QuickSettings -->
+         <com.android.settings.preferences.ui.AdaptivePreference
+            android:icon="@drawable/ic_settings_quicksettings"
+            android:title="@string/quicksettings_title"
+            android:summary="@string/qs_settings_summary"
+            android:fragment="com.crdroid.settings.fragments.QuickSettings" />
+
         <!-- Notifications -->
         <com.android.settings.preferences.ui.AdaptivePreference
             android:icon="@drawable/ic_dashboard_notifications"
@@ -42,11 +56,26 @@
             android:summary="@string/notif_settings_summary"
             android:fragment="com.crdroid.settings.fragments.Notifications" />
 
+        <!-- Navigation -->
+        <com.android.settings.preferences.ui.AdaptivePreference
+            android:key="navigation"
+            android:icon="@drawable/ic_navigation"
+            android:title="@string/nav_settings_title"
+            android:summary="@string/nav_settings_summary"
+            android:fragment="com.crdroid.settings.fragments.Navigation" />
+
         <!-- Sound -->
         <com.android.settings.preferences.ui.AdaptivePreference
             android:icon="@drawable/ic_cellphone_sound"
             android:title="@string/sound_title"
             android:summary="@string/sound_settings_summary"
-            android:fragment="com.crdroid.settings.fragments.Sound"
-            app:position="bottom" />    
+            android:fragment="com.crdroid.settings.fragments.Sound" />
+
+        <!-- Buttons-->
+        <com.android.settings.preferences.ui.AdaptivePreference
+            android:icon="@drawable/ic_settings_buttons"
+            android:title="@string/buttons_settings_title"
+            android:summary="@string/buttons_settings_summary"
+            android:fragment="com.crdroid.settings.fragments.Buttons"
+            app:position="bottom" />
 </PreferenceScreen> 
