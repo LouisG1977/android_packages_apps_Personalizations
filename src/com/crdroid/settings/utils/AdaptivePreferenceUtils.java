@@ -129,6 +129,30 @@ public class AdaptivePreferenceUtils {
                 return R.layout.preference_custom_seekbar_solo;
         }
     }
+    
+    public static int getComposeLayoutResourceId(Context context, AttributeSet attrs) {
+        int settingsTheme = getSettingsTheme(context);
+        final String positionString = getPosition(context, attrs);
+        final Position position = Position.fromAttribute(positionString);
+        String layout = getLayoutIdentifierSeekbar(settingsTheme);
+        if (position == null) {
+            return context.getResources().getIdentifier("preference_compose" + layout, "layout", "com.android.settings");
+        }
+        switch (position) {
+            case TOP:
+                return context.getResources().getIdentifier("preference_compose_custom_top" + layout, "layout", "com.android.settings");
+            case BOTTOM:
+                return context.getResources().getIdentifier("preference_compose_custom_bottom" + layout, "layout", "com.android.settings");
+            case MIDDLE:
+                return context.getResources().getIdentifier("preference_compose_custom_middle" + layout, "layout", "com.android.settings");
+            case SOLO:
+                return R.layout.preference_custom_seekbar_solo;
+            case NONE:
+                return -1;
+            default:
+                return R.layout.preference_custom_seekbar_solo;
+        }
+    }
 
     public enum Position {
         TOP,
