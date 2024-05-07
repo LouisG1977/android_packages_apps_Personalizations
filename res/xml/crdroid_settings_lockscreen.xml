@@ -187,7 +187,7 @@
         android:key="lockscreen_fp_category"
         android:title="@string/lockscreen_fp_category_title">
 
-        <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="fp_success_vibrate"
             android:title="@string/fp_success_vibrate_title"
             android:summary="@string/fp_success_vibrate_summary"
@@ -198,7 +198,8 @@
             android:key="fp_error_vibrate"
             android:title="@string/fp_error_vibrate_title"
             android:summary="@string/fp_error_vibrate_summary"
-            android:defaultValue="true" />-->
+            android:defaultValue="true"
+            lineage:position="bottom" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="enable_ripple_effect"
