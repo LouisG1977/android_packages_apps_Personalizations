@@ -18,7 +18,7 @@
         android:layout_height="wrap_content">
 
         <FrameLayout
-            android:id="@id/icon_frame"
+            android:id="@+id/icon_frame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -64,6 +64,35 @@
                 android:layout_marginTop="2.0dip"
                 android:maxLines="4"
                 android:textColor="@color/op_control_text_color_secondary" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20.0dip"
+                android:orientation="vertical">
+
+                <SeekBar
+                    android:id="@*android:id/seekbar"
+                    android:layout_gravity="center_vertical"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="12dp"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"/>
+
+                <TextView
+                    android:id="@+id/suppression_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|start"
+                    android:textAlignment="viewStart"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:visibility="gone"
+                    android:textAppearance="@*android:style/TextAppearance.DeviceDefault.Body1"
+                    android:textColor="?android:attr/textColorSecondary"/>
+
+            </LinearLayout>
         </RelativeLayout>
 
         <androidx.cardview.widget.CardView
@@ -73,6 +102,7 @@
             android:layout_marginEnd="16dp"
             android:layout_alignParentEnd="true"
             app:cardBackgroundColor="#00000000"
+            android:visibility="gone"
             app:cardElevation="0dp"
             app:cardCornerRadius="99dp">
 
