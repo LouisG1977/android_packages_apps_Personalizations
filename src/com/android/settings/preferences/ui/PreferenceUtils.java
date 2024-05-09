@@ -34,6 +34,7 @@ import com.android.settings.spa.preference.ComposePreference;
 import com.android.settings.notification.IncreasingRingVolumePreference;
 import com.android.settings.fuelgauge.batteryusage.PowerGaugePreference;
 import com.android.settings.widget.CardPreference;
+import com.crdroid.settings.preferences.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -93,7 +94,10 @@ public class PreferenceUtils {
             PowerGaugePreference.class,
             PreferenceCategory.class,
             UsageProgressBarPreference.class,
-            ComposePreference.class
+            ComposePreference.class,
+            CustomSeekBarPreference.class,
+            SystemSettingSeekBarPreference.class,
+            SecureSettingSeekBarPreference.class
         );
         return exclusionList;
     }
