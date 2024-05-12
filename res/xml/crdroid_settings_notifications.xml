@@ -132,7 +132,6 @@
         <!-- Battery light -->
         <com.android.settings.preferences.ui.AdaptivePreference
             android:key="battery_lights"
-            android:icon="@drawable/ic_led_on"
             android:title="@string/battery_light_title"
             android:summary="@string/battery_light_summary"
             android:fragment="com.crdroid.settings.fragments.notifications.notificationlight.BatteryLightSettings"
@@ -141,7 +140,6 @@
         <!-- Notification lights -->
         <com.android.settings.preferences.ui.AdaptivePreference
             android:key="notification_lights"
-            android:icon="@drawable/ic_led_on"
             android:title="@string/notification_light_title"
             android:summary="@string/notification_light_summary"
             android:fragment="com.crdroid.settings.fragments.notifications.notificationlight.NotificationLightSettings"
