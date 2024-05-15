@@ -104,6 +104,12 @@
             android:dependency="pocket_mode_enabled"
             android:defaultValue="false" />
 
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="window_ignore_secure"
+            android:title="@string/laboratory_ignore_window_secure_title"
+            android:summary="@string/laboratory_ignore_window_secure_summary"
+            android:defaultValue="false" />
+
         <!-- Three-fingers-swipe to screenshot -->
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="three_finger_gesture"
