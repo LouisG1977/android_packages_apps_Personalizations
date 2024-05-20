@@ -79,6 +79,12 @@ public class PreferenceUtils {
                 int layoutResource = getLayoutResourceForKey(context, key, topPrefs, middlePrefs, bottomPrefs, soloPrefs, forceThemeMiddle);
                 if (layoutResource != 0 && !getExcludedPrefClass().contains(preference.getClass())) {
                     preference.setLayoutResource(layoutResource);
+                    int bottomLayout = AdaptivePreferenceUtils.getLayoutResourceId(context, "bottom", false);
+                    if (forceThemeMiddle && 
+                        layoutResource == bottomLayout
+                        && bottomPrefs.size() == 1) {
+                        preference.setOrder(1001);
+                    }
                 }
             }
         }
