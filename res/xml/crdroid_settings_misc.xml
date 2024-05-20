@@ -110,12 +110,15 @@
             android:summary="@string/laboratory_ignore_window_secure_summary"
             android:defaultValue="false" />
 
-        <!-- Three-fingers-swipe to screenshot -->
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="three_finger_gesture"
-            android:title="@string/three_finger_gesture"
-            android:summary="@string/three_finger_gesture_summary"
-            android:defaultValue="false" />
+        <!-- Three-fingers-swipe gestures -->
+        <com.crdroid.settings.preferences.SystemSettingListPreference
+            android:key="three_finger_gesture_action"
+            android:title="@string/three_finger_gesture_action_title"
+            android:summary="%s"
+            android:dialogTitle="@string/three_finger_gesture_action_dialog_title"
+            android:entries="@array/shake_gestures_action_entries"
+            android:entryValues="@array/shake_gestures_action_values"
+            android:defaultValue="0" />
 
         <!-- Unlock FPS for specific games -->
         <com.crdroid.settings.preferences.SystemPropertySwitchPreference
