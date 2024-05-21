@@ -42,6 +42,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.fragments.lockscreen.UdfpsAnimation;
 import com.crdroid.settings.fragments.lockscreen.UdfpsIconPicker;
+import com.crdroid.settings.preferences.CustomSeekBarPreference;
 
 import java.util.List;
 
@@ -67,6 +68,7 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String KEY_UDFPS_ICONS = "udfps_icon_picker";
     private static final String SCREEN_OFF_UDFPS_ENABLED = "screen_off_udfps_enabled";
     private static final String KEY_KG_USER_SWITCHER= "kg_user_switcher_enabled";
+    private static final String LOCKSCREEN_MAX_NOTIF_CONFIG = "lockscreen_max_notif_cofig";
 
     private Preference mUdfpsAnimations;
     private Preference mUdfpsIcons;
@@ -74,7 +76,8 @@ public class LockScreen extends SettingsPreferenceFragment
     private Preference mWeather;
     private Preference mScreenOffUdfps;
     private Preference mUserSwitcher;
-    
+    private CustomSeekBarPreference mMaxKeyguardNotifConfig;  
+
     private OmniJawsClient mWeatherClient;
 
     @Override
@@ -120,6 +123,12 @@ public class LockScreen extends SettingsPreferenceFragment
         mWeatherClient = new OmniJawsClient(getContext());
         updateWeatherSettings();
         
+        mMaxKeyguardNotifConfig = (CustomSeekBarPreference) findPreference(LOCKSCREEN_MAX_NOTIF_CONFIG);
+        int kgconf = Settings.System.getInt(getContentResolver(),
+                Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 3);
+        mMaxKeyguardNotifConfig.setValue(kgconf);
+        mMaxKeyguardNotifConfig.setOnPreferenceChangeListener(this);
+
         PreferenceScreen screen = getPreferenceScreen();
         PreferenceUtils.hideEmptyCategory(gestCategory, screen);
         PreferenceUtils.hideEmptyCategory(udfpsCategory, screen);
@@ -131,8 +140,21 @@ public class LockScreen extends SettingsPreferenceFragment
         if (preference == mUserSwitcher) {
             SystemRestartUtils.showSystemUIRestartDialog(getContext());
             return true;
+        } else if (preference == mMaxKeyguardNotifConfig) {
+            int kgconf = (Integer) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, kgconf);
+            return true;
         }
         return false;
+    }
+
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putIntForUser(resolver,
+                Settings.System.LOCK_SCREEN_CUSTOM_NOTIF, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 3, UserHandle.USER_CURRENT);
     }
 
     private void updateWeatherSettings() {

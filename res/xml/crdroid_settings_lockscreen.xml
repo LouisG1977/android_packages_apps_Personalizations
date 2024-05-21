@@ -209,8 +209,23 @@
                android:title="@string/lockscreen_enable_power_menu_title"
                android:summary="@string/lockscreen_enable_power_menu_summary"
                android:defaultValue="true"
-               lineage:position="solo" />
+               lineage:position="top"/>
 
+       <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="lock_screen_custom_notif"
+            android:title="@string/lockscreen_maxnotif_title"
+            android:summary="@string/lockscreen_maxnotif_summary"
+            android:defaultValue="false" />
+
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="lockscreen_max_notif_cofig"
+            android:title="@string/lockscreen_maxnotif_config"
+            android:max="6"
+            settings:min="1"
+            settings:units=""
+            android:persistent="false"
+            android:dependency="lock_screen_custom_notif"
+            lineage:position="bottom" />
     </PreferenceCategory>
 
 </PreferenceScreen>
