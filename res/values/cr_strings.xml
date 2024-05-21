@@ -16,6 +16,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Multi user avatar on homepage -->
+    <string name="show_multi_user_avatar_on_homepage_title">Show Multi-user avatar on homepage</string>
+    <string name="show_multi_user_avatar_on_homepage_summary">Wether to show multi-user or google avatar on homepage</string>
+
     <!-- X-Reality Engine -->
     <string name="x_reality_engine_mode_title">X-Reality Engine</string>
     <string name="x_reality_engine_mode_summary">Enable bravia engine inspired display mode</string>
