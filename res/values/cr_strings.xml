@@ -16,6 +16,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Compact QS Media Player-->
+    <string name="qs_compact_media_player_mode_title">Compact QS Media player</string>
+    <string name="qs_compact_media_player_mode_summary">Enable compact mode for QuickSettings media player</string>
+
     <!-- Multi user avatar on homepage -->
     <string name="show_multi_user_avatar_on_homepage_title">Show Multi-user avatar on homepage</string>
     <string name="show_multi_user_avatar_on_homepage_summary">Wether to show multi-user or google avatar on homepage</string>
