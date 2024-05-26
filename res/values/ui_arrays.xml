@@ -27,14 +27,15 @@
         <item>hibernated_apps</item>
         <item>app_battery_usage</item>
         <item>cloned_apps</item>
-    </string-array>
-
-    <string-array name="app_dashboard_bottom_prefs">
         <item>special_access</item>
     </string-array>
 
-    <string-array name="app_dashboard_solo_prefs">
+    <string-array name="app_dashboard_bottom_prefs">
         <item>aspect_ratio_apps</item>
+    </string-array>
+
+    <string-array name="app_dashboard_solo_prefs">
+        <item></item>
     </string-array>
     
     <!-- Sound Dashboard -->
