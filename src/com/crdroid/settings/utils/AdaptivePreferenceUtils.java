@@ -76,7 +76,7 @@ public class AdaptivePreferenceUtils {
         return layoutId[settingsTheme];
     }
     
-    private static String getLayoutIdentifierSeekbar(int settingsTheme) {
+    private static String getCustomLayoutIdentifier(int settingsTheme) {
         return settingsTheme > 1 ? "_mt" : "";
     }
     
@@ -110,7 +110,7 @@ public class AdaptivePreferenceUtils {
         int settingsTheme = getSettingsTheme(context);
         final String positionString = getPosition(context, attrs);
         final Position position = Position.fromAttribute(positionString);
-        String layout = getLayoutIdentifierSeekbar(settingsTheme);
+        String layout = getCustomLayoutIdentifier(settingsTheme);
         if (position == null) {
             return context.getResources().getIdentifier("preference_custom_seekbar_middle" + layout, "layout", "com.android.settings");
         }
@@ -134,9 +134,9 @@ public class AdaptivePreferenceUtils {
         int settingsTheme = getSettingsTheme(context);
         final String positionString = getPosition(context, attrs);
         final Position position = Position.fromAttribute(positionString);
-        String layout = getLayoutIdentifierSeekbar(settingsTheme);
+        String layout = getCustomLayoutIdentifier(settingsTheme);
         if (position == null) {
-            return context.getResources().getIdentifier("preference_compose" + layout, "layout", "com.android.settings");
+            return context.getResources().getIdentifier("preference_compose", "layout", "com.android.settings");
         }
         switch (position) {
             case TOP:
@@ -146,11 +146,10 @@ public class AdaptivePreferenceUtils {
             case MIDDLE:
                 return context.getResources().getIdentifier("preference_compose_custom_middle" + layout, "layout", "com.android.settings");
             case SOLO:
-                return R.layout.preference_custom_seekbar_solo;
+            default:
+                return context.getResources().getIdentifier("preference_compose", "layout", "com.android.settings");
             case NONE:
                 return -1;
-            default:
-                return R.layout.preference_custom_seekbar_solo;
         }
     }
 
