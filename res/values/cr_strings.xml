@@ -1683,6 +1683,7 @@
     <string name="function_font_bold">Bold</string>
     <string name="function_font_italic">Italic</string>
     <string name="function_font_bold_italic">Bold Italic</string>
+    <string name="function_font_Cooljazz">Cooljazz</string>
     <string name="function_font_light_italic">Light Italic</string>
     <string name="function_font_thin_italic">Thin Italic</string>
     <string name="function_font_light">Light</string>

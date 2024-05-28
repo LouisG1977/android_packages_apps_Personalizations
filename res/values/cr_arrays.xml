@@ -1131,6 +1131,7 @@
         <item>@string/function_font_italic</item>
         <item>@string/function_font_bold</item>
         <item>@string/function_font_bold_italic</item>
+        <item>@string/function_font_Cooljazz</item>
         <item>@string/function_font_light</item>
         <item>@string/function_font_light_italic</item>
         <item>@string/function_font_thin</item>
@@ -1180,6 +1181,7 @@
         <item>22</item>
         <item>23</item>
         <item>24</item>
+        <item>25</item>
     </string-array>
 
     <!-- VoLTE Icon Type -->
