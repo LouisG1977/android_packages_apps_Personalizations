@@ -1759,4 +1759,8 @@
     <string name="notif_panel_maxnotif_config">Max Notif. Panel notifications</string>
     <!-- Quick settings tiles layout -->
     <string name="qs_tile_secondary_label_size_title">Secondary Label text size</string>
+
+    <!-- Enable all props -->
+    <string name="all_props_title">Enable spoof options</string>
+    <string name="all_props_summary">Enables all the spoof options within the PixelProps</string>
 </resources>

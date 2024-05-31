@@ -76,19 +76,27 @@
             android:defaultValue="true"
             app:position="top" />
 
+        <com.crdroid.settings.preferences.SystemPropertySwitchPreference
+            android:key="persist.sys.pixelprops.all"
+            android:title="@string/all_props_title"
+            android:summary="@string/all_props_summary"
+            android:defaultValue="true" />
+
         <!-- GMS spoof -->
         <com.crdroid.settings.preferences.SystemPropertySwitchPreference
             android:key="persist.sys.pixelprops.gms"
             android:title="@string/gms_spoof_title"
             android:summary="@string/gms_spoof_summary"
-            android:defaultValue="false" />
+            android:defaultValue="false"
+            android:dependency="persist.sys.pixelprops.all" />
 
         <!-- Netflix -->
         <com.crdroid.settings.preferences.SystemPropertySwitchPreference
             android:key="persist.sys.pixelprops.netflix"
             android:title="@string/netflix_spoof_title"
             android:summary="@string/netflix_spoof_summary"
-            android:defaultValue="false" />
+            android:defaultValue="false"
+            android:dependency="persist.sys.pixelprops.all" />
 
         <!-- Pocket Judge -->
         <com.crdroid.settings.preferences.SecureSettingSwitchPreference
@@ -124,7 +132,8 @@
         <com.crdroid.settings.preferences.SystemPropertySwitchPreference
             android:key="persist.sys.pixelprops.games"
             android:title="@string/use_games_spoof_title"
-            android:summary="@string/use_games_spoof_summary" />
+            android:summary="@string/use_games_spoof_summary"
+            android:dependency="persist.sys.pixelprops.all" />
 
         <!-- Unlimited google photos storage -->
         <com.crdroid.settings.preferences.SystemPropertySwitchPreference
@@ -132,7 +141,7 @@
             android:title="@string/use_photos_spoof_title"
             android:summary="@string/use_photos_spoof_summary"
             android:defaultValue="true"
-             />
+            android:dependency="persist.sys.pixelprops.all" />
             
         <!-- Sensor block per package -->
         <com.android.settings.preferences.ui.AdaptivePreference

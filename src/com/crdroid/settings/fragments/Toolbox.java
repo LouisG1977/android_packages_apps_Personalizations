@@ -50,8 +50,10 @@ public class Toolbox extends SettingsPreferenceFragment implements Preference.On
     public static final String TAG = "Toolbox";
     private static final String KEY_QUICKSWITCH_PREFERENCE = "quickswitch";
     private static final String SYS_GMS_SPOOF = "persist.sys.pixelprops.gms";
+    private static final String SYS_PROP_OPTIONS = "persist.sys.pixelprops.all";
 
     private Preference mGmsSpoof;
+    private Preference mPropOptions;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,11 +70,13 @@ public class Toolbox extends SettingsPreferenceFragment implements Preference.On
         }
         mGmsSpoof = (Preference) findPreference(SYS_GMS_SPOOF);
         mGmsSpoof.setOnPreferenceChangeListener(this);
+        mPropOptions = (Preference) findPreference(SYS_PROP_OPTIONS);
+        mPropOptions.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mGmsSpoof) {
+        if (preference == mGmsSpoof || preference == mPropOptions) {
             SystemRestartUtils.showSystemRestartDialog(getContext());
             return true;
         }
