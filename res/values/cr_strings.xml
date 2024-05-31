@@ -997,6 +997,8 @@
     <!-- Unlock FPS for specific games -->
     <string name="use_games_spoof_title">Unlock higher FPS in games</string>
     <string name="use_games_spoof_summary">Spoof your device as different model for specific games to unlock higher FPS</string>
+    
+    <string name="spoof_option_disabled">Disabling PixelProps spoofing is not supported by current device</string>
 
     <!-- Volume panel -->
     <string name="volume_panel_category">Volume panel</string>

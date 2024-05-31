@@ -87,16 +87,14 @@
             android:key="persist.sys.pixelprops.gms"
             android:title="@string/gms_spoof_title"
             android:summary="@string/gms_spoof_summary"
-            android:defaultValue="false"
-            android:dependency="persist.sys.pixelprops.all" />
+            android:defaultValue="false"/>
 
         <!-- Netflix -->
         <com.crdroid.settings.preferences.SystemPropertySwitchPreference
             android:key="persist.sys.pixelprops.netflix"
             android:title="@string/netflix_spoof_title"
             android:summary="@string/netflix_spoof_summary"
-            android:defaultValue="false"
-            android:dependency="persist.sys.pixelprops.all" />
+            android:defaultValue="false" />
 
         <!-- Pocket Judge -->
         <com.crdroid.settings.preferences.SecureSettingSwitchPreference
@@ -127,13 +125,6 @@
             android:entries="@array/shake_gestures_action_entries"
             android:entryValues="@array/shake_gestures_action_values"
             android:defaultValue="0" />
-
-        <!-- Unlock FPS for specific games -->
-        <com.crdroid.settings.preferences.SystemPropertySwitchPreference
-            android:key="persist.sys.pixelprops.games"
-            android:title="@string/use_games_spoof_title"
-            android:summary="@string/use_games_spoof_summary"
-            android:dependency="persist.sys.pixelprops.all" />
 
         <!-- Unlimited google photos storage -->
         <com.crdroid.settings.preferences.SystemPropertySwitchPreference
