@@ -84,8 +84,12 @@
     <string name="health_charge_high_threshold_title">Charging level threshold</string>
 
     <!-- App Title -->
+    <string name="personalize_highlight_settings_title">Personalize your device</string>
+    <string name="network_highlight_settings_summary">Setup network and internet connection</string>
+    <string name="bt_highlight_settings_title">Setup connected devices</string>
+    <string name="bt_highlight_settings_summary">Add, pair bluetooth, and configure device connections</string>
     <string name="rising_settings_title">Personalize</string>
-    <string name="rising_settings_summary">Your device, your style</string>
+    <string name="rising_settings_summary">Change icons, themes, and more</string>
     <string name="crdroid_settings_title">risingOS Settings</string>
     <string name="crdroid_settings_summary">Open goodness</string>
     <string name="reset_settings_title">Reset settings</string>

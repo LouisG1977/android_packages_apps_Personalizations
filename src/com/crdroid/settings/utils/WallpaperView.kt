@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 The risingOS Android Project
+ * Copyright (C) 2023-2024 The risingOS Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ import android.os.Handler
 import android.util.AttributeSet
 import android.widget.ImageView
 
-class WallpaperView : ImageView {
+open class WallpaperView : ImageView {
 
     private val handler = Handler()
     private var currentWallpaperDrawable: Drawable? = null
@@ -58,8 +58,8 @@ class WallpaperView : ImageView {
         setWallpaperPreview()
         handler.postDelayed(wallpaperChecker, 2000)
     }
-
-    private fun setWallpaperPreview() {
+    
+    protected open fun updateWallpaper() {
         val wallpaperManager = WallpaperManager.getInstance(context)
         val wallpaperDrawable: Drawable? = wallpaperManager.drawable
 
@@ -69,6 +69,10 @@ class WallpaperView : ImageView {
                 setImageDrawable(it)
             }
         }
+    }
+
+    protected open fun setWallpaperPreview() {
+        updateWallpaper()
     }
 
     override fun onDetachedFromWindow() {

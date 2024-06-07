@@ -15,12 +15,15 @@
 -->
 
 <resources>
+    <dimen name="page_margin">16dp</dimen>
     <dimen name="sound_engine_profile_card_height">128dp</dimen>
     <dimen name="sound_engine_profile_card_radius">22dp</dimen>
     <dimen name="sound_engine_label_bottom">12dp</dimen>
     <dimen name="sound_engine_label_start">12dp</dimen>
     <dimen name="selected_card_border_width">1.5dp</dimen>
-    <dimen name="custom_avatar_length">48dp</dimen>
+    <dimen name="custom_search_bar_corner_radius">22dp</dimen>
+    <dimen name="custom_avatar_length">60dp</dimen>
+    <dimen name="custom_avatar_margin_start">10dp</dimen>
     <dimen name="custom_avatar_margin_end">8dp</dimen>
     <dimen name="homepage_highlight_length">100dp</dimen>
     <dimen name="homepage_highlight_card_height">90dp</dimen>
@@ -47,7 +50,7 @@
     <dimen name="card_height">75.0dp</dimen>
     <dimen name="card_height_rui">75.0dp</dimen>
     <dimen name="card_height_round">75.0dp</dimen>
-    <dimen name="card_radius_highlight">32dp</dimen>
+    <dimen name="card_radius_highlight">22dp</dimen>
     <dimen name="card_radius">32dp</dimen>
     <dimen name="top_card_radius">4dp</dimen>
     <dimen name="mid_card_radius">4dp</dimen>
