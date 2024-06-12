@@ -124,7 +124,7 @@
     <string name="firmware_build_summary_title">By maintainer</string>
     <string name="build_is_official_title">#Official</string>
     <string name="build_is_community_title">#Community</string>
-    <string name="maintainer_summary">%s</string>
+    <string name="maintainer_summary">by %s</string>
     <string name="unknown_maintainer">unknown</string>
     <string name="device_info_platform_version">14 | fourteen | UpsideDownCake</string>
     <string name="about_rising_device">Rising Device</string>
@@ -139,6 +139,8 @@
     <string name="device_info_chipset">Chipset</string>
     <string name="device_info_resolution">Resolution</string>
     <string name="device_info_storage">Storage</string>
+    <string name="my_device_category_title">My device</string>
+    <string name="my_device_category_more_title">More</string>
 
    <!-- rising dashboard -->
     <string name="about_settings_title">About Us</string>

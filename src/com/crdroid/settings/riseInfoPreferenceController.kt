@@ -86,20 +86,26 @@ class riseInfoPreferenceController(context: Context) : AbstractPreferenceControl
         super.displayPreference(screen)
 
         val releaseType = getProp(PROP_RISING_RELEASETYPE).lowercase()
-        val codeName = getProp(PROP_RISING_CODE).lowercase()
+        val codeName = getProp(PROP_RISING_CODE)
         val risingMaintainer = getRisingMaintainer(releaseType)
         val isOfficial = releaseType == "official"
 
         val hwInfoPreference = screen.findPreference<LayoutPreference>(KEY_HW_INFO)!!
         val swInfoPreference = screen.findPreference<LayoutPreference>(KEY_SW_INFO)!!
         val statusPreference = screen.findPreference<Preference>(KEY_BUILD_STATUS)!!
+        val bannerPreference = screen.findPreference<LayoutPreference>(KEY_BUILD_BANNER)!!
         val aboutHwInfoView: View = hwInfoPreference.findViewById(R.id.about_device_hardware)
         val deviceHardwareCard: View = hwInfoPreference.findViewById<TextView>(R.id.device_hardware)
         val deviceShowcaseCard: View = hwInfoPreference.findViewById<TextView>(R.id.device_showcase_container)
 
-        statusPreference.setTitle(FIRMWARE_NAME + " " + getRisingVersion() + " " + getRisingBuildStatus(releaseType))
+        statusPreference.setTitle(getRisingBuildStatus(releaseType).lowercase())
         statusPreference.setSummary(risingMaintainer)
         statusPreference.setIcon(if (isOfficial) R.drawable.verified else R.drawable.unverified)
+        bannerPreference.apply {
+            findViewById<TextView>(R.id.firmware_device).text = "${Build.DEVICE}"
+            findViewById<TextView>(R.id.firmware_version).text = "v" + getRisingVersion()
+            findViewById<TextView>(R.id.firmware_codename).text = codeName
+        }
 
         hwInfoPreference.apply {
             findViewById<TextView>(R.id.device_chipset).text = getRisingChipset()
@@ -161,6 +167,7 @@ class riseInfoPreferenceController(context: Context) : AbstractPreferenceControl
         private const val KEY_HW_INFO = "my_device_hw_header"
         private const val KEY_DEVICE_INFO = "my_device_info_header"
         private const val KEY_BUILD_STATUS = "rom_build_status"
+        private const val KEY_BUILD_BANNER = "banner_logo"
 
         private const val PROP_RISING_CODE = "ro.rising.code"
         private const val PROP_RISING_VERSION = "ro.rising.version"
