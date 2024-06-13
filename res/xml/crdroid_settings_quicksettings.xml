@@ -121,7 +121,7 @@
             android:key="qs_compact_media_player_mode"
             android:title="@string/qs_compact_media_player_mode_title"
             android:summary="@string/qs_compact_media_player_mode_summary"
-            android:defaultValue="true"  />
+            android:defaultValue="false"  />
 
         <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
             android:key="qs_transparency"
