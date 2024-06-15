@@ -15,18 +15,18 @@
  * limitations under the License.
  */
 
-package com.crdroid.settings.fragments.notifications;
+package com.crdroid.settings.fragments.sound;
 
 import android.os.Bundle;
 import com.crdroid.settings.fragments.AlphaStylesFragment;
 import com.android.settings.R;
 
-public class NotificationStyles extends AlphaStylesFragment {
+public class VolumePanelStyles extends AlphaStylesFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        setCategory("android.theme.customization.nf_style");
-        String title = getContext().getString(R.string.theme_customization_notifications_title);
+        setCategory("android.theme.customization.volume_style");
+        String title = getContext().getString(R.string.theme_customization_volume_panel_styles_title);
         setTitle(title);
         super.onCreate(savedInstanceState);
     }
