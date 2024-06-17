@@ -131,8 +131,7 @@
             android:key="persist.sys.pixelprops.gphotos"
             android:title="@string/use_photos_spoof_title"
             android:summary="@string/use_photos_spoof_summary"
-            android:defaultValue="true"
-            android:dependency="persist.sys.pixelprops.all" />
+            android:defaultValue="true" />
             
         <!-- Sensor block per package -->
         <com.android.settings.preferences.ui.AdaptivePreference
