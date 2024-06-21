@@ -1784,6 +1784,11 @@
     <string name="all_props_title">Enable spoof options</string>
     <string name="all_props_summary">Enables all the spoof options within the PixelProps</string>
 
+    <!-- Spoof google app props -->
+    <string name="google_spoof_title">Spoof google apps</string>
+    <string name="google_spoof_summary">Spoof a few google apps to Pixel 8 Pro</string>
+    <string name="google_spoof_option_disabled">Enabling Google apps spoofing is not needed by current device</string>
+
     <!-- Text Brightness -->
     <string name="bb_show_percentage_title">Brightness percentage</string>
     <string name="bb_show_percentage_summary">Show brightness percentage text in brightness bar</string>
