@@ -95,13 +95,15 @@ public class Toolbox extends SettingsPreferenceFragment implements Preference.On
         mGmsSpoof.setOnPreferenceChangeListener(this);
         mPropOptions.setOnPreferenceChangeListener(this);
         mGoogleSpoof.setOnPreferenceChangeListener(this);
+        mGphotosSpoof.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mGmsSpoof 
             || preference == mPropOptions
-            || preference == mGoogleSpoof) {
+            || preference == mGoogleSpoof
+            || preference == mGphotosSpoof) {
             SystemRestartUtils.showSystemRestartDialog(getContext());
             return true;
         }
