@@ -1640,7 +1640,7 @@
     
     <!-- GMS Spoof -->
     <string name="gms_spoof_title">Enable GMS spoof</string>
-    <string name="gms_spoof_summary">Spoof your device to pass Google Play Attestation (Breaks Pixel Features)</string>
+    <string name="gms_spoof_summary">Spoof your device to pass Google Play Attestation</string>
     
      <!-- Shake Gestures -->
     <string name="shake_gestures_enabled_title">Shake Gestures</string>
