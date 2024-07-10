@@ -23,6 +23,7 @@
     <string-array name="app_dashboard_middle_prefs">
         <item>dashboard_tile_pref_com.google.android.apps.gsa.staticplugins.settings.AssistantAndroidSettingsActivity</item>
         <item>dashboard_tile_pref_com.google.android.apps.wellbeing.home.AppsNotificationSettingsActivity</item>
+        <item>dashboard_tile_pref_com.android.providers.media.photopicker.PhotoPickerSettingsActivity</item>
         <item>cloned_apps</item>
         <item>hibernated_apps</item>
         <item>app_battery_usage</item>
