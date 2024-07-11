@@ -953,25 +953,19 @@
     
     <string-array name="clock_style_entries">
         <item>Default</item>
-        <item>Clock OOS</item>
-        <item>Clock IOS</item>
-        <item>Clock COS</item>
-        <item>Clock Custom</item>
-        <item>Clock Custom 1</item>
-        <item>Clock Custom 2</item>
-        <item>Clock Custom 3</item>
-        <item>Clock MIUI</item>
-        <item>Clock IDE</item>
-        <item>Clock Lottie</item>
-        <item>Clock Lottie2</item>
-        <item>Clock Fluid</item>
-        <item>Clock Dualtone</item>
-        <item>Clock Dualtone2</item>
-        <item>Clock Stylish</item>
-        <item>Clock Sidebar</item>
-        <item>Clock Minimal</item>
-        <item>Clock Minimal2</item>
-        <item>Clock Minimal3</item>
+        <item>OOS</item>
+        <item>IOS</item>
+        <item>Color OS</item>
+        <item>Aesthetic</item>
+        <item>MIUI</item>
+        <item>IDE</item>
+        <item>HyperOS</item>
+        <item>Dualtone</item>
+        <item>Stylish</item>
+        <item>Sidebar</item>
+        <item>Minimal</item>
+        <item>Minimal 2</item>
+        <item>Nothing 3.0</item>
     </string-array>
 
     <string-array name="clock_style_values">
@@ -989,12 +983,6 @@
         <item>11</item>
         <item>12</item>
         <item>13</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
-        <item>19</item>
     </string-array>
 
     <string-array name="widget_entries">
