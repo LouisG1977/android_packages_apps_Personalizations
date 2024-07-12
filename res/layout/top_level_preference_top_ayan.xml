@@ -28,7 +28,7 @@
                 android:padding="1.5dip"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:tint="@color/option_border_color"
+                android:tint="@color/rising_option_border_color"
                 app:maxHeight="52.5dp"
                 app:maxWidth="52.5dp" />
 
