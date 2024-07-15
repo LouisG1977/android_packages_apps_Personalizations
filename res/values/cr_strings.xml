@@ -16,6 +16,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Lockscreen Clock Revamp --> 
+    <string name="ls_clock_custom_font_not_supported">Selected clock does not support custom fonts</string>
+
     <!-- Media Art --> 
     <string name="ls_media_art_fade_level_title">Media cover art fade level</string>
     <string name="ls_media_art_fade_level_summary">Set media cover art fade level</string>
@@ -536,8 +539,8 @@
     <string name="theme_customization_wifi_icon_summary">Set custom wifi icon style</string>
     <string name="theme_customization_navbar_title">Navbar style</string>
     <string name="theme_customization_navbar_summary">Set custom navigation bar style</string>
-    <string name="theme_customization_lock_clock_title">Clock font style</string>
-    <string name="theme_customization_lock_clock_summary">Set lockscreen clock font style</string>
+    <string name="theme_customization_lock_clock_title">Clock face</string>
+    <string name="theme_customization_lock_clock_summary">Modify lockscreen clock appearance</string>
     <string name="theme_customization_data_title">Data icon style</string>
     <string name="theme_customization_data_summary">Set custom data icon style</string>
 
