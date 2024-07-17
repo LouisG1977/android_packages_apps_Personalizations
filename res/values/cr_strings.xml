@@ -1799,4 +1799,8 @@
     <!-- Text Brightness -->
     <string name="bb_show_percentage_title">Brightness percentage</string>
     <string name="bb_show_percentage_summary">Show brightness percentage text in brightness bar</string>
+
+    <!-- QS split shade -->
+    <string name="qs_split_shade_title">Split Shade</string>
+    <string name="qs_split_shade_summary">Split QS layout in landscape mode</string>
 </resources>
