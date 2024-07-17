@@ -103,7 +103,7 @@
                 android:layout_gravity="start|top"
                 android:layout_marginTop="16dp"
                 android:layout_marginLeft="16dp"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="15sp"
                 android:textStyle="italic|bold"
                 android:background="@android:color/transparent" />
@@ -115,8 +115,7 @@
                 android:layout_gravity="start|bottom"
                 android:layout_marginBottom="16dp"
                 android:layout_marginLeft="16dp"
-                android:text="Janus"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="15sp"
                 android:textStyle="italic|bold"
                 android:background="@android:color/transparent" />
