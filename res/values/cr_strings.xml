@@ -16,6 +16,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Desktop Mode Settings -->
+    <string name="desktop_mode_pc_title">Desktop Mode</string>
+    <string name="desktop_mode_pc_summary">Emulate device to PC or external display</string>
+
     <!-- Lockscreen Clock Highlight Guide --> 
     <string name="ls_clock_face_highlight_text">Swipe left or right to preview clock styles</string>
 
