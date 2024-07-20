@@ -63,6 +63,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String KEY_PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
     private static final String KEY_QS_COMPACT_PLAYER  = "qs_compact_media_player_mode";
     private static final String KEY_QS_SPLIT_SHADE = "qs_split_shade";
+    private static final String KEY_QS_WIDGETS_ENABLED  = "qs_widgets_enabled";
 
     private static final String QS_SPLIT_SHADE_LAYOUT_CTG = "android.theme.customization.qs_landscape_layout";
     private static final String QS_SPLIT_SHADE_LAYOUT_PKG = "com.android.systemui.qs.landscape.split_shade_layout";
@@ -79,6 +80,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private ListPreference mTileAnimationInterpolator;
     private Preference mQsCompactPlayer;
     private SwitchPreferenceCompat mSplitShade;
+    private Preference mQsWidgetsPref;
 
     private ThemeUtils mThemeUtils;
 
@@ -96,6 +98,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
         mShowBrightnessSlider = findPreference(KEY_SHOW_BRIGHTNESS_SLIDER);
         mShowBrightnessSlider.setOnPreferenceChangeListener(this);
+        mQsWidgetsPref = findPreference(KEY_QS_WIDGETS_ENABLED);
+        mQsWidgetsPref.setOnPreferenceChangeListener(this);
         boolean showSlider = LineageSettings.Secure.getIntForUser(resolver,
                 LineageSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER, 1, UserHandle.USER_CURRENT) > 0;
 
@@ -148,6 +152,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             return true;
         } else if (preference == mSplitShade) {
             updateSplitShadeState(((Boolean) newValue).booleanValue());
+            return true;
+        } else if (preference == mQsWidgetsPref) {
+            LineageSettings.Secure.putIntForUser(resolver,
+                    LineageSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER, 0, UserHandle.USER_CURRENT);
+            SystemRestartUtils.showSystemUIRestartDialog(getActivity());
             return true;
         }
         return false;

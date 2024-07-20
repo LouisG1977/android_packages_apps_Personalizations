@@ -16,6 +16,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- QS Widgets -->
+    <string name="qs_widgets_enabled_title">QuickSettings Widgets</string>
+    <string name="qs_widgets_enabled_summary">Show quicksettings widgets for quick access</string>
+
     <!-- Desktop Mode Settings -->
     <string name="desktop_mode_pc_title">Desktop Mode</string>
     <string name="desktop_mode_pc_summary">Emulate device to PC or external display</string>
