@@ -1275,6 +1275,7 @@
     <string name="qs_columns_landscape_title">Columns (landscape)</string>
     <string name="qqs_rows_portrait_title">Quick QS Rows (portrait)</string>
     <string name="qqs_rows_landscape_title">Quick QS Rows (landscape)</string>
+    <string name="qs_panel_row_count_title">QS Rows (portrait)</string>
 
     <!-- Statusbar Clock background chip -->
     <string name="statusbar_clock_chip_title">Background chip</string>

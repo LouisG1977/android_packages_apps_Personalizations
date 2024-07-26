@@ -251,20 +251,28 @@
             android:defaultValue="4" />
 
         <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
-            android:key="qqs_layout_rows"
-            android:title="@string/qqs_rows_portrait_title"
-            android:max="3"
+            android:key="qs_panel_row_count"
+            android:title="@string/qs_panel_row_count_title"
+            android:max="5"
+            settings:min="2"
+            settings:interval="1"
+            android:defaultValue="4" />
+            
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="qs_panel_row_count_landscape"
+            android:title="@string/qqs_rows_landscape_title"
+            android:max="5"
             settings:min="1"
             settings:interval="1"
             android:defaultValue="2" />
 
         <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
-            android:key="qqs_layout_rows_landscape"
-            android:title="@string/qqs_rows_landscape_title"
+            android:key="qqs_layout_rows"
+            android:title="@string/qqs_rows_portrait_title"
             android:max="3"
-            settings:min="2"
+            settings:min="1"
             settings:interval="1"
-            android:defaultValue="1"
+            android:defaultValue="2"
             lineage:position="bottom" />
     </PreferenceCategory>
 
