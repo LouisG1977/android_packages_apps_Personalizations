@@ -30,16 +30,4 @@
         app:position="solo"
         />
 
-    <com.android.settings.preferences.ui.AdaptivePreference
-        android:key="nothing_launcher_customizations"
-        android:icon="@drawable/ic_gaming"
-        android:title="@string/nothing_launcher_customizations_title"
-        android:summary="@string/nothing_launcher_customizations_summary"
-        app:position="solo">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="com.nothing.launcher"
-            android:targetClass="com.nothing.launcher.setting.wallpaper.CustomisationSettingsActivity" />
-    </com.android.settings.preferences.ui.AdaptivePreference>
-
 </PreferenceScreen>

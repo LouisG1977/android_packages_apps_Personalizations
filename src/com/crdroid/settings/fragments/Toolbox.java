@@ -67,15 +67,6 @@ public class Toolbox extends SettingsPreferenceFragment implements Preference.On
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.crdroid_settings_misc);
-        final boolean targetHasSingleLauncher = SystemProperties.getInt("persist.sys.target_has_single_launcher", 0) != 0;
-        final PreferenceScreen preferenceScreen = getPreferenceScreen();
-        if (targetHasSingleLauncher) {
-            Preference quickSwitchPreference = findPreference(KEY_QUICKSWITCH_PREFERENCE);
-            if (quickSwitchPreference != null) {
-                quickSwitchPreference.setEnabled(false);
-                quickSwitchPreference.setSummary(R.string.quickswitch_not_supported);
-            }
-        }
         mNetflixSpoof = (Preference) findPreference(SYS_NETFLIX_SPOOF);
         mGphotosSpoof = (Preference) findPreference(SYS_GPHOTOS_SPOOF);
         mGmsSpoof = (Preference) findPreference(SYS_GMS_SPOOF);
