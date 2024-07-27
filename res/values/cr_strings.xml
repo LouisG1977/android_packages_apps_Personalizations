@@ -16,6 +16,11 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- AOD custom image -->
+    <string name="lockscreen_custom_image_title">Lockscreen AOD image</string>
+    <string name="lockscreen_custom_image_summary">Set custom lockscreen AOD image</string>
+    <string name="custom_aod_image_not_supported">Clock style not supported</string>
+
     <!-- QS Widgets -->
     <string name="qs_widgets_enabled_title">QuickSettings Widgets</string>
     <string name="qs_widgets_enabled_summary">Show quicksettings widgets for quick access</string>
