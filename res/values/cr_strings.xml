@@ -16,6 +16,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- PIF spoofing -->
+    <string name="pif_spoofing_title">Select PIF JSON File</string>
+    <string name="pif_spoofing_summary">Pick PIF JSON file to be used for spoofing play integrity</string>
+
     <!-- AOD custom image -->
     <string name="lockscreen_custom_image_title">Lockscreen AOD image</string>
     <string name="lockscreen_custom_image_summary">Set custom lockscreen AOD image</string>

@@ -16,23 +16,17 @@
 package com.crdroid.settings.fragments;
 
 import android.app.Activity;
-import android.app.settings.SettingsEnums;
-import android.content.ContentResolver;
 import android.content.Context;
+import android.content.ContentResolver;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.SystemProperties;
-import android.os.UserHandle;
+import android.util.Log;
 import android.provider.Settings;
 
-import androidx.preference.ListPreference;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceScreen;
-import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.rising.SystemRestartUtils;
@@ -41,20 +35,26 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.android.internal.util.rising.SystemRestartUtils;
+
+import org.json.JSONObject;
+
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.Iterator;
 import java.util.List;
-import java.util.ArrayList;
 
 @SearchIndexable
 public class Toolbox extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "Toolbox";
-    private static final String KEY_QUICKSWITCH_PREFERENCE = "quickswitch";
     private static final String SYS_GMS_SPOOF = "persist.sys.pixelprops.gms";
     private static final String SYS_GOOGLE_SPOOF = "persist.sys.pixelprops.google";
     private static final String SYS_PROP_OPTIONS = "persist.sys.pixelprops.all";
     private static final String SYS_NETFLIX_SPOOF = "persist.sys.pixelprops.netflix";
     private static final String SYS_GPHOTOS_SPOOF = "persist.sys.pixelprops.gphotos";
-    
+    private static final String KEY_PIF_JSON_FILE_PREFERENCE = "pif_json_file_preference";
+
     private boolean isPixelDevice;
 
     private Preference mGmsSpoof;
@@ -62,16 +62,20 @@ public class Toolbox extends SettingsPreferenceFragment implements Preference.On
     private Preference mGphotosSpoof;
     private Preference mNetflixSpoof;
     private Preference mPropOptions;
+    private Preference mPifJsonFilePreference;
+    
+    private Handler mHandler;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mHandler = new Handler();
         addPreferencesFromResource(R.xml.crdroid_settings_misc);
-        mNetflixSpoof = (Preference) findPreference(SYS_NETFLIX_SPOOF);
-        mGphotosSpoof = (Preference) findPreference(SYS_GPHOTOS_SPOOF);
-        mGmsSpoof = (Preference) findPreference(SYS_GMS_SPOOF);
-        mGoogleSpoof = (Preference) findPreference(SYS_GOOGLE_SPOOF);
-        mPropOptions = (Preference) findPreference(SYS_PROP_OPTIONS);
+        mNetflixSpoof = findPreference(SYS_NETFLIX_SPOOF);
+        mGphotosSpoof = findPreference(SYS_GPHOTOS_SPOOF);
+        mGmsSpoof = findPreference(SYS_GMS_SPOOF);
+        mGoogleSpoof = findPreference(SYS_GOOGLE_SPOOF);
+        mPropOptions = findPreference(SYS_PROP_OPTIONS);
         isPixelDevice = SystemProperties.get("ro.soc.manufacturer").equals("Google");
         if (!isPixelDevice) {
             mPropOptions.setEnabled(false);
@@ -87,6 +91,45 @@ public class Toolbox extends SettingsPreferenceFragment implements Preference.On
         mPropOptions.setOnPreferenceChangeListener(this);
         mGoogleSpoof.setOnPreferenceChangeListener(this);
         mGphotosSpoof.setOnPreferenceChangeListener(this);
+        mPifJsonFilePreference = findPreference(KEY_PIF_JSON_FILE_PREFERENCE);
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        if (preference == mPifJsonFilePreference) {
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+            intent.setType("application/json");
+            startActivityForResult(intent, 10001);
+            return true;
+        }
+        return super.onPreferenceTreeClick(preference);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 10001 && resultCode == Activity.RESULT_OK) {
+            Uri uri = data.getData();
+            Log.d(TAG, "URI received: " + uri.toString());
+            try (InputStream inputStream = getActivity().getContentResolver().openInputStream(uri)) {
+                if (inputStream != null) {
+                    String json = new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
+                    Log.d(TAG, "JSON data: " + json);
+                    JSONObject jsonObject = new JSONObject(json);
+                    for (Iterator<String> it = jsonObject.keys(); it.hasNext(); ) {
+                        String key = it.next();
+                        String value = jsonObject.getString(key);
+                        Log.d(TAG, "Setting property: persist.sys.pihooks_" + key + " = " + value);
+                        SystemProperties.set("persist.sys.pihooks_" + key, value);
+                    }
+                }
+            } catch (Exception e) {
+                Log.e(TAG, "Error reading JSON or setting properties", e);
+            }
+            mHandler.postDelayed(() -> {
+                SystemRestartUtils.showSystemRestartDialog(getContext());
+            }, 1250);
+        }
     }
 
     @Override
