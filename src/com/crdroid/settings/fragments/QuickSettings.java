@@ -156,7 +156,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         } else if (preference == mQsWidgetsPref) {
             LineageSettings.Secure.putIntForUser(resolver,
                     LineageSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER, 0, UserHandle.USER_CURRENT);
-            SystemRestartUtils.showSystemUIRestartDialog(getActivity());
+            SystemRestartUtils.showSystemRestartDialog(getActivity());
             return true;
         }
         return false;
