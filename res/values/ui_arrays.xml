@@ -103,6 +103,7 @@
     </string-array>
 
     <string-array name="battery_dashboard_solo_prefs">
+        <item>dashboard_tile_pref_org.lineageos.settings.thermal.ThermalActivity</item>
     </string-array>
     
     <!-- Display Dashboard -->
