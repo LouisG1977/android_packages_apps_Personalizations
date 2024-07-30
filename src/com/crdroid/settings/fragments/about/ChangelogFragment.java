@@ -43,7 +43,7 @@ public class ChangelogFragment extends PreferenceFragment {
 
     TextView textView;
 
-    private static final String README_URL = "https://raw.githubusercontent.com/RisingOS-staging/risingOS_changelogs/fourteen/README.md";
+    private static final String README_URL = "https://raw.githubusercontent.com/RisingTechOSS/risingOS_changelogs/fourteen/README.md";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
