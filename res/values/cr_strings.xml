@@ -86,9 +86,11 @@
     <string name="kg_user_switcher_enabled_title">User Switcher</string>
     <string name="kg_user_switcher_enabled_summary">Show user switcher when showing pin/password prompt</string>
 
-     <!-- Three Finger Swipe Gestures -->
+     <!-- Three Finger Gestures -->
     <string name="three_finger_gesture_action_title">Three Finger Swipe Gestures</string>
     <string name="three_finger_gesture_action_dialog_title">Swipe Three Finger Gestures Actions</string>
+    <string name="three_finger_long_press_action_title">Three Finger Long Press Gestures</string>
+    <string name="three_finger_long_press_action_dialog_title">Swipe Three Finger Gestures Actions</string>
 
     <!-- Ignore window secure -->
     <string name="laboratory_ignore_window_secure_title">Ignore window secure flags</string>
