@@ -155,6 +155,8 @@
     <string name="toolbox_summary">System features</string>
     <string name="themes_title">Themes</string>
     <string name="themes_summary">Show your true colours</string>
+    <string name="spoofing_title">Spoofing</string>
+    <string name="spoofing_title_summary">Spoof as different device to unlock application features</string>
 
      <!-- Device Info screen -->
     <string name="firmware_name_text">risingOS</string>
