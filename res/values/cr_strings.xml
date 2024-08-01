@@ -27,8 +27,10 @@
     <string name="pif_spoofing_summary">Pick PIF JSON file to be used for spoofing play integrity</string>
 
     <!-- AOD custom image -->
+    <string name="lockscreen_custom_image_enabled_title">Enable Lockscreen AOD image</string>
     <string name="lockscreen_custom_image_title">Lockscreen AOD image</string>
     <string name="lockscreen_custom_image_summary">Set custom lockscreen AOD image</string>
+    <string name="lockscreen_custom_image_pick_summary">Select AOD image from gallery</string>
     <string name="custom_aod_image_not_supported">Clock style not supported</string>
 
     <!-- QS Widgets -->
