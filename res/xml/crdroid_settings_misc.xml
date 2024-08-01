@@ -54,6 +54,13 @@
         </com.android.settings.preferences.ui.AdaptivePreference>
 
         <com.android.settings.preferences.ui.AdaptivePreference
+            android:key="gestures"
+            android:icon="@drawable/ic_settings_gestures"
+            android:title="@string/gestures_title"
+            android:summary="@string/gestures_title_summary"
+            android:fragment="com.crdroid.settings.fragments.Gestures" />
+
+        <com.android.settings.preferences.ui.AdaptivePreference
             android:key="navigation"
             android:icon="@drawable/ic_navigation"
             android:title="@string/nav_settings_title"
@@ -109,26 +116,6 @@
             android:title="@string/laboratory_ignore_window_secure_title"
             android:summary="@string/laboratory_ignore_window_secure_summary"
             android:defaultValue="false" />
-
-        <!-- Three-fingers-swipe gestures -->
-        <com.crdroid.settings.preferences.SystemSettingListPreference
-            android:key="three_finger_gesture_action"
-            android:title="@string/three_finger_gesture_action_title"
-            android:summary="%s"
-            android:dialogTitle="@string/three_finger_gesture_action_dialog_title"
-            android:entries="@array/shake_gestures_action_entries"
-            android:entryValues="@array/shake_gestures_action_values"
-            android:defaultValue="0" />
-            
-        <!-- Three-fingers long press gestures -->
-        <com.crdroid.settings.preferences.SystemSettingListPreference
-            android:key="three_finger_long_press_action"
-            android:title="@string/three_finger_long_press_action_title"
-            android:summary="%s"
-            android:dialogTitle="@string/three_finger_long_press_action_dialog_title"
-            android:entries="@array/shake_gestures_action_entries"
-            android:entryValues="@array/shake_gestures_action_values"
-            android:defaultValue="0" />
             
         <!-- Sensor block per package -->
         <com.android.settings.preferences.ui.AdaptivePreference

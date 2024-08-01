@@ -331,6 +331,7 @@
 
     <!-- Gestures -->
     <string name="gestures_title">Gestures</string>
+    <string name="gestures_title_summary">Use gestures to perform device actions</string>
 
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Roaming indicator</string>
@@ -811,6 +812,7 @@
     <string name="anbi_summary">Prevent interaction with navigation buttons while the screen is being touched</string>
 
     <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gestures_title">Three finger gestures</string>
     <string name="three_finger_gesture">Swipe to screenshot</string>
     <string name="three_finger_gesture_summary">Swipe three fingers to take screenshot</string>
 
