@@ -259,8 +259,14 @@ public class DeviceUtils {
 
     public static boolean deviceSupportsFlashLight(Context context) {
         CameraManager cameraManager = context.getSystemService(CameraManager.class);
+        if (cameraManager == null) {
+            return false;
+        }
         try {
             String[] ids = cameraManager.getCameraIdList();
+            if (ids == null) {
+                return false;
+            }
             for (String id : ids) {
                 CameraCharacteristics c = cameraManager.getCameraCharacteristics(id);
                 Boolean flashAvailable = c.get(CameraCharacteristics.FLASH_INFO_AVAILABLE);
