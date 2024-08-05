@@ -261,7 +261,7 @@
         <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
             android:key="qs_panel_row_count_landscape"
             android:title="@string/qqs_rows_landscape_title"
-            android:max="5"
+            android:max="4"
             settings:min="1"
             settings:interval="1"
             android:defaultValue="2" />
