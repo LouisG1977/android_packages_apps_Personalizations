@@ -129,5 +129,6 @@
     <string-array name="display_dashboard_solo_prefs">
         <item>auto_rotate</item>
         <item>device_state_auto_rotate</item>
+        <item>dashboard_tile_pref_org.lineageos.settings.doze.DozeSettingsActivity</item>
     </string-array>
 </resources>
