@@ -33,11 +33,11 @@
     <!-- Power Modes -->
     <string name="device_power_mode">Power Mode</string>
 
-    <!-- GameProps spoofing -->
-    <string name="gameprops_title">Enable GameProps spoofing</string>
-    <string name="gameprops_summary">Enables all the spoof options within the PixelProps</string>
-    <string name="gameprops_load_json_title">Select GameProps JSON File</string>
-    <string name="gameprops_load_json_summary">Pick GameProps JSON file to be used for spoofing games</string>
+    <!-- Per-app spoofing -->
+    <string name="gameprops_title">Enable Per-app spoofing</string>
+    <string name="gameprops_summary">Enables per-app spoofing options within the PixelProps</string>
+    <string name="gameprops_load_json_title">Select Per-app Props JSON File</string>
+    <string name="gameprops_load_json_summary">Pick Per-app JSON file to be used for spoofing games</string>
 
     <!-- PIF spoofing -->
     <string name="pif_spoofing_title">Select PIF JSON File</string>
