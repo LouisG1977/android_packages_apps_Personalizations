@@ -16,6 +16,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Power Modes -->
+    <string name="device_power_mode">Power Mode</string>
+
     <!-- GameProps spoofing -->
     <string name="gameprops_title">Enable GameProps spoofing</string>
     <string name="gameprops_summary">Enables all the spoof options within the PixelProps</string>
