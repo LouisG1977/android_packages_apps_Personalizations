@@ -129,6 +129,17 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+          android:title="@string/lockscreen_clock_title">
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_double_line_clock_switch"
+            android:title="@string/lockscreen_double_line_clock_setting_toggle"
+            android:summary="@string/lockscreen_double_line_clock_summary"
+            settings:controller="com.android.settings.display.LockscreenClockPreferenceController"
+            lineage:position="solo" />
+     </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="lockscreen_gestures_category"
         android:title="@string/gestures_title">
 

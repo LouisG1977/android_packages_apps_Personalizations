@@ -1917,4 +1917,7 @@
 
     <!-- Boot Animation Style Strings -->
     <string name="boot_animation_styles_summary">Choose a style for your boot animation</string>
+
+    <!-- Clock -->
+    <string name="lockscreen_clock_title">Lockscreen clock/Styles</string>
 </resources>
