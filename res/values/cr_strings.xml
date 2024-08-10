@@ -16,6 +16,11 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Spoofing redirect to wiki -->
+    <string name="help_section_title">Help and Support</string>
+    <string name="help_footer_title">Spoofing Guides</string>
+    <string name="help_footer_summary">Visit our wiki for detailed guides and support.</string>
+
     <!-- Hide developer status -->
     <string name="hide_developer_status_title">Hide developer status</string>
     <string name="hide_developer_status_summary">Hide developer status from apps</string>

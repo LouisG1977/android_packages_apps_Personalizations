@@ -67,6 +67,7 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
     private Preference mPifJsonFilePreference;
     private Preference mGamePropsJsonFilePreference;
     private Preference mGamePropsSpoof;
+    private Preference mWikiLink;
 
     private Handler mHandler;
 
@@ -112,6 +113,16 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
             openFileSelector(10002);
             return true;
         });
+        
+        mWikiLink = findPreference("wiki_link");
+        if (mWikiLink != null) {
+            mWikiLink.setOnPreferenceClickListener(preference -> {
+                Uri uri = Uri.parse("https://github.com/RisingTechOSS/risingOS_wiki");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+                return true;
+            });
+        }
     }
 
     private void openFileSelector(int requestCode) {

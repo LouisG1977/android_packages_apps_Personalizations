@@ -73,4 +73,16 @@
             android:defaultValue="true"
             app:position="bottom" />
 
+    <PreferenceCategory
+        android:title="@string/help_section_title"
+        android:key="help_section">
+
+        <com.android.settings.preferences.ui.AdaptivePreference
+            android:key="wiki_link"
+            android:title="@string/help_footer_title"
+            android:summary="@string/help_footer_summary"
+            android:icon="@drawable/ic_custom_help"
+            app:position="solo"/>
+    </PreferenceCategory>
+
 </PreferenceScreen>
