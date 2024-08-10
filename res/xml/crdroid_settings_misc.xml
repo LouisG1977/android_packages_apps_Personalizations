@@ -68,6 +68,13 @@
             android:fragment="com.crdroid.settings.fragments.Navigation" />
 
         <com.android.settings.preferences.ui.AdaptivePreference
+            android:key="security"
+            android:icon="@drawable/ic_device_info_security"
+            android:title="@string/security_title"
+            android:summary="@string/security_summary"
+            android:fragment="com.crdroid.settings.fragments.Security" />
+
+        <com.android.settings.preferences.ui.AdaptivePreference
             android:key="spoofing"
             android:icon="@drawable/ic_key"
             android:title="@string/spoofing_title"
@@ -110,37 +117,6 @@
             android:summary="@string/always_on_pocket_mode_summary"
             android:dependency="pocket_mode_enabled"
             android:defaultValue="false" />
-
-        <com.android.settings.preferences.ui.AdaptivePreference
-            android:key="hide_developer_status_settings"
-            android:title="@string/hide_developer_status_title"
-            android:summary="@string/hide_developer_status_summary"
-            android:fragment="com.crdroid.settings.fragments.HideDeveloperStatusSettings" />
-
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="hide_screen_capture_status"
-            android:title="@string/hide_screen_capture_status_title"
-            android:summary="@string/hide_screen_capture_status_summary"
-            android:defaultValue="false"/>
-
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="no_storage_restrict"
-            android:title="@string/no_storage_restrict_title"
-            android:summary="@string/no_storage_restrict_summary"
-            android:defaultValue="false"/>
-
-        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
-            android:key="window_ignore_secure"
-            android:title="@string/laboratory_ignore_window_secure_title"
-            android:summary="@string/laboratory_ignore_window_secure_summary"
-            android:defaultValue="false" />
-            
-        <!-- Sensor block per package -->
-        <com.android.settings.preferences.ui.AdaptivePreference
-            android:key="sensor_block_settings"
-            android:title="@string/sensor_block_title"
-            android:summary="@string/sensor_block_summary"
-            android:fragment="com.crdroid.settings.fragments.misc.SensorBlock"/>
 
         <!-- Smart Pixels -->
         <com.android.settings.preferences.ui.AdaptivePreference

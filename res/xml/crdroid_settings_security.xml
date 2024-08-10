@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Copyright (C) 2023-2024 The risingOS Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/security_title">
+
+        <com.android.settings.preferences.ui.AdaptivePreference
+            android:key="hide_developer_status_settings"
+            android:title="@string/hide_developer_status_title"
+            android:summary="@string/hide_developer_status_summary"
+            android:fragment="com.crdroid.settings.fragments.HideDeveloperStatusSettings"
+            app:position="top" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="hide_screen_capture_status"
+            android:title="@string/hide_screen_capture_status_title"
+            android:summary="@string/hide_screen_capture_status_summary"
+            android:defaultValue="false"/>
+
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="window_ignore_secure"
+            android:title="@string/laboratory_ignore_window_secure_title"
+            android:summary="@string/laboratory_ignore_window_secure_summary"
+            android:defaultValue="false" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="no_storage_restrict"
+            android:title="@string/no_storage_restrict_title"
+            android:summary="@string/no_storage_restrict_summary"
+            android:defaultValue="false"/>
+
+        <!-- Sensor block per package -->
+        <com.android.settings.preferences.ui.AdaptivePreference
+            android:key="sensor_block_settings"
+            android:title="@string/sensor_block_title"
+            android:summary="@string/sensor_block_summary"
+            android:fragment="com.crdroid.settings.fragments.misc.SensorBlock"
+            app:position="bottom"/>
+            
+        <com.android.settingslib.widget.FooterPreference
+            android:key="security_settings_footer"
+            android:title="@string/security_settings_footer_text"
+            android:selectable="false"
+            settings:searchable="false" />
+
+</PreferenceScreen>
