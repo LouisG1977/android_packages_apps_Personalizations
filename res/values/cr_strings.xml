@@ -16,6 +16,15 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Power Mode tile -->
+    <string name="power_mode_tile_label">Power Mode</string>
+    <string name="power_mode_default">Default</string>
+    <string name="power_mode_conservative">Conservative</string>
+    <string name="power_mode_powersave">Powersave</string>
+    <string name="power_mode_performance">Performance</string>
+    <string name="power_mode_gameboost">Game Boost</string>
+    <string name="power_mode_unknown">Unknown</string>
+
     <!-- RAM Boost -->
     <string name="ramboost_title">RAM Boost</string>
     <string name="ramboost_summary">Prioritize utilizing compressed memory (ZRAM) and swap space (if available) to improve overall performance.</string>
