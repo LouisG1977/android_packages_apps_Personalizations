@@ -45,6 +45,7 @@ import lineageos.providers.LineageSettings;
 
 import com.android.internal.util.rising.SystemRestartUtils;
 import com.android.internal.util.crdroid.ThemeUtils;
+import com.android.internal.util.crdroid.CustomUtils;
 
 import com.crdroid.settings.utils.ResourceUtils;
 import com.crdroid.settings.utils.ImageUtils;
@@ -157,7 +158,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             updateAnimTileStyle(value);
             return true;
         } else if (preference == mQsCompactPlayer) {
-            SystemRestartUtils.showSystemUIRestartDialog(getActivity());
+            CustomUtils.showSystemUiRestartDialog(getContext());
             return true;
         } else if (preference == mSplitShade) {
             updateSplitShadeState(((Boolean) newValue).booleanValue());
