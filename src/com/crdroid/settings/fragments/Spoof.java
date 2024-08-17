@@ -126,7 +126,7 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
     }
     
     private boolean isNewTensorDevice(String model) {
-        return model.matches("Pixel [7-9][a-zA-Z ]*");
+        return model.matches("Pixel [8-9][a-zA-Z ]*");
     }
 
     private void openFileSelector(int requestCode) {
