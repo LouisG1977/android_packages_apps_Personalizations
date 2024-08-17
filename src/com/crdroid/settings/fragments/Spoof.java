@@ -98,10 +98,13 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
         mGmsSpoof.setDependency(SYS_PROP_OPTIONS);
         mGphotosSpoof.setDependency(SYS_PROP_OPTIONS);
         mNetflixSpoof.setDependency(SYS_PROP_OPTIONS);
-
-        if (isPixelDevice && isNewTensorDevice(model)) {
-            mGoogleSpoof.setEnabled(false);
-            mGoogleSpoof.setSummary(R.string.google_spoof_option_disabled);
+        
+        if (isPixelDevice) {
+            mGoogleSpoof.setDefaultValue(false);
+            if (isMainlineTensorModel(model)) {
+                mGoogleSpoof.setEnabled(false);
+                mGoogleSpoof.setSummary(R.string.google_spoof_option_disabled);
+            }
         }
 
         mGmsSpoof.setOnPreferenceChangeListener(this);
@@ -136,7 +139,7 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
         });
     }
     
-    private boolean isNewTensorDevice(String model) {
+    private boolean isMainlineTensorModel(String model) {
         return model.matches("Pixel [8-9][a-zA-Z ]*");
     }
 
