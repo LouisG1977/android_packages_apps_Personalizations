@@ -28,14 +28,31 @@
         android:key="gen_ui"
         android:title="@string/gen_ui_settings_title">
 
+        <!-- Ambient Display -->
+        <com.android.settings.preferences.ui.AdaptivePreference
+            android:key="doze_fragment"
+            android:icon="@drawable/ic_ambient"
+            android:title="@string/doze_display_title"
+            android:summary="@string/doze_display_summary"
+            android:fragment="com.crdroid.settings.fragments.ui.DozeSettings"
+            lineage:position="top" />
+
+        <com.crdroid.settings.preferences.SystemPropertyListPreference
+            android:key="persist.sys.bootanimation_style"
+            android:icon="@drawable/ic_movie"
+            android:title="@string/boot_animation_styles_title"
+            android:entries="@array/boot_animation_styles_entries"
+            android:entryValues="@array/boot_animation_styles_values"
+            android:summary="%s"
+            />
+
         <!-- Font style -->
         <com.android.settings.preferences.ui.AdaptivePreference
             android:key="android.theme.customization.fonts"
             android:icon="@drawable/ic_font"
             android:title="@string/theme_customization_font_title"
             android:summary="@string/theme_customization_font_summary"
-            android:fragment="com.crdroid.settings.fragments.ui.fonts.FontPickerPreview"
-            lineage:position="top" />
+            android:fragment="com.crdroid.settings.fragments.ui.fonts.FontPickerPreview"/>
 
         <!-- Icon pack -->
         <com.android.settings.preferences.ui.AdaptivePreference

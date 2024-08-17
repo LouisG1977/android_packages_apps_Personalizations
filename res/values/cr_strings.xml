@@ -16,6 +16,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- BootAnimation Styles -->
+    <string name="boot_animation_styles_title">Bootanimation Styles</string>
+
     <!-- Play Integrit Fix JSON Update -->
     <string name="toast_spoofing_success">Successfully downloaded pif.json. Spoofing as %1$s for play integrity.</string>
     <string name="toast_spoofing_failure">Failed to spoof properties.</string>
