@@ -16,6 +16,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Play Integrit Fix JSON Update -->
+    <string name="toast_spoofing_success">Successfully downloaded pif.json. Spoofing as %1$s for play integrity.</string>
+    <string name="toast_spoofing_failure">Failed to spoof properties.</string>
+    <string name="update_pif_json_title">Update Play Integrity Fix</string>
+    <string name="update_pif_json_summary">Update PIF spoofing device, requires internet connection.</string>
+
     <!-- Power Mode tile -->
     <string name="power_mode_tile_label">Power Mode</string>
     <string name="power_mode_default">Default</string>

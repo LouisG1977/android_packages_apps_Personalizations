@@ -54,9 +54,16 @@
             android:defaultValue="true"/>
 
         <com.android.settings.preferences.ui.AdaptivePreference
+            android:key="update_pif_json"
+            android:title="@string/update_pif_json_title"
+            android:summary="@string/update_pif_json_summary"
+            android:dependency="persist.sys.pixelprops.gms" />
+
+        <com.android.settings.preferences.ui.AdaptivePreference
             android:key="pif_json_file_preference"
             android:title="@string/pif_spoofing_title"
-            android:summary="@string/pif_spoofing_summary"/>
+            android:summary="@string/pif_spoofing_summary"
+            android:dependency="persist.sys.pixelprops.gms"/>
 
         <!-- Netflix -->
         <com.crdroid.settings.preferences.SystemPropertySwitchPreference
