@@ -18,9 +18,11 @@ package com.crdroid.settings.fragments;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.UserHandle;
+import android.provider.MediaStore;
 import android.provider.Settings;
 
 import androidx.preference.ListPreference;
@@ -45,6 +47,7 @@ import com.android.internal.util.rising.SystemRestartUtils;
 import com.android.internal.util.crdroid.ThemeUtils;
 
 import com.crdroid.settings.utils.ResourceUtils;
+import com.crdroid.settings.utils.ImageUtils;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -54,6 +57,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "QuickSettings";
+    
+    private static final int CUSTOM_IMAGE_REQUEST_CODE = 1001;
 
     private static final String KEY_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
     private static final String KEY_BRIGHTNESS_SLIDER_POSITION = "qs_brightness_slider_position";
@@ -64,6 +69,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String KEY_QS_COMPACT_PLAYER  = "qs_compact_media_player_mode";
     private static final String KEY_QS_SPLIT_SHADE = "qs_split_shade";
     private static final String KEY_QS_WIDGETS_ENABLED  = "qs_widgets_enabled";
+    private static final String KEY_QS_WIDGETS_PHOTO_IMG  = "qs_widgets_photo_showcase_image";
 
     private static final String QS_SPLIT_SHADE_LAYOUT_CTG = "android.theme.customization.qs_landscape_layout";
     private static final String QS_SPLIT_SHADE_LAYOUT_PKG = "com.android.systemui.qs.landscape.split_shade_layout";
@@ -81,6 +87,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private Preference mQsCompactPlayer;
     private SwitchPreferenceCompat mSplitShade;
     private Preference mQsWidgetsPref;
+    private Preference mQsWidgetPhoto;
 
     private ThemeUtils mThemeUtils;
 
@@ -100,6 +107,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mShowBrightnessSlider.setOnPreferenceChangeListener(this);
         mQsWidgetsPref = findPreference(KEY_QS_WIDGETS_ENABLED);
         mQsWidgetsPref.setOnPreferenceChangeListener(this);
+        mQsWidgetPhoto = findPreference(KEY_QS_WIDGETS_PHOTO_IMG);
+        mQsWidgetPhoto.setOnPreferenceChangeListener(this);
         boolean showSlider = LineageSettings.Secure.getIntForUser(resolver,
                 LineageSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER, 1, UserHandle.USER_CURRENT) > 0;
 
@@ -233,7 +242,34 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mTileAnimationDuration.setEnabled(tileAnimationStyle != 0);
         mTileAnimationInterpolator.setEnabled(tileAnimationStyle != 0);
     }
-      
+    
+        @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        if (preference == mQsWidgetPhoto) {
+            Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            intent.setType("image/*");
+            startActivityForResult(intent, CUSTOM_IMAGE_REQUEST_CODE);
+            return true;
+        }
+        return super.onPreferenceTreeClick(preference);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent result) {
+        super.onActivityResult(requestCode, resultCode, result);
+        if (requestCode == CUSTOM_IMAGE_REQUEST_CODE && resultCode == Activity.RESULT_OK && result != null) {
+            Uri imgUri = result.getData();
+            if (imgUri != null) {
+                String savedImagePath = ImageUtils.saveImageToInternalStorage(getContext(), imgUri, "qs_widgets", "QS_WIDGETS_PHOTO_SHOWCASE");
+                if (savedImagePath != null) {
+                    ContentResolver resolver = getContext().getContentResolver();
+                    Settings.System.putStringForUser(resolver, "qs_widgets_photo_showcase_path", savedImagePath, UserHandle.USER_CURRENT);
+                    mQsWidgetPhoto.setSummary(savedImagePath);
+                }
+            }
+        }
+    }
+
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.CRDROID_SETTINGS;

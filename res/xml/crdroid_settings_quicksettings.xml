@@ -190,6 +190,19 @@
             android:summary="@string/qs_widgets_enabled_summary"
             android:defaultValue="false"
             lineage:position="top" />
+            
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_widgets_photo_showcase_enabled"
+            android:title="@string/qs_widgets_photo_showcase_enabled_title"
+            android:summary="@string/qs_widgets_photo_showcase_enabled_summary"
+            android:dependency="qs_widgets_enabled"
+            android:defaultValue="false" />
+            
+        <com.android.settings.preferences.ui.AdaptivePreference
+            android:key="qs_widgets_photo_showcase_image"
+            android:title="@string/qs_widgets_photo_showcase_image_title"
+            android:dependency="qs_widgets_photo_showcase_enabled"
+            android:summary="@string/qs_widgets_photo_showcase_image_summary" />
 
        <!-- QS panel style -->
         <com.android.settings.preferences.ui.AdaptivePreference

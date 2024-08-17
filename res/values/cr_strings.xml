@@ -85,6 +85,10 @@
     <!-- QS Widgets -->
     <string name="qs_widgets_enabled_title">QuickSettings Widgets</string>
     <string name="qs_widgets_enabled_summary">Show quicksettings widgets for quick access</string>
+    <string name="qs_widgets_photo_showcase_enabled_title">QuickSettings photo widget</string>
+    <string name="qs_widgets_photo_showcase_enabled_summary">Show photo widget in QuickSettings </string>
+    <string name="qs_widgets_photo_showcase_image_title">QuickSettings photo widget image</string>
+    <string name="qs_widgets_photo_showcase_image_summary">Select image for QuickSettings photo widget</string>
 
     <!-- Desktop Mode Settings -->
     <string name="desktop_mode_pc_title">Desktop Mode</string>
