@@ -37,14 +37,12 @@
             android:fragment="com.crdroid.settings.fragments.ui.DozeSettings"
             lineage:position="top" />
 
-        <com.crdroid.settings.preferences.SystemPropertyListPreference
-            android:key="persist.sys.bootanimation_style"
+        <com.android.settings.preferences.ui.AdaptivePreference
+            android:key="bootanimation_fragment"
             android:icon="@drawable/ic_movie"
             android:title="@string/boot_animation_styles_title"
-            android:entries="@array/boot_animation_styles_entries"
-            android:entryValues="@array/boot_animation_styles_values"
-            android:summary="%s"
-            />
+            android:summary="@string/boot_animation_styles_summary"
+            android:fragment="com.crdroid.settings.fragments.BootAnimationSettings" />
 
         <!-- Font style -->
         <com.android.settings.preferences.ui.AdaptivePreference
