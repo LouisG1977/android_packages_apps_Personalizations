@@ -126,6 +126,19 @@
             android:fragment="com.crdroid.settings.fragments.ui.SmartPixels"/>
 
         <com.android.settings.preferences.ui.AdaptivePreference
+            android:key="backup_personalization_settings"
+            android:title="@string/backup_settings_title"
+            android:summary="@string/backup_settings_summary"
+            android:icon="@drawable/ic_backup" />
+
+        <com.android.settings.preferences.ui.AdaptivePreference
+            android:key="restore_personalization_settings"
+            android:title="@string/restore_settings_title"
+            android:summary="@string/restore_settings_summary"
+            android:icon="@drawable/ic_restore"
+            app:position="bottom" />
+
+        <com.android.settings.preferences.ui.AdaptivePreference
     	   android:key="hide_developer_status_settings"
            android:title="@string/hide_developer_status_title"
            android:summary="@string/hide_developer_status_summary"

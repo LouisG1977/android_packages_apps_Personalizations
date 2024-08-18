@@ -1903,4 +1903,10 @@
     <!-- QS split shade -->
     <string name="qs_split_shade_title">Split Shade</string>
     <string name="qs_split_shade_summary">Split QS layout in landscape mode</string>
+
+    <!-- Backup/Restore settings -->
+    <string name="backup_settings_title">Backup Personalization Settings</string>
+    <string name="backup_settings_summary">Save your personalization settings to a file</string>
+    <string name="restore_settings_title">Restore Personalization Settings</string>
+    <string name="restore_settings_summary">Restore your personalization settings from a backup file</string>
 </resources>
