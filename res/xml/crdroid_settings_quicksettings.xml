@@ -247,46 +247,13 @@
             android:summary="@string/qs_tile_layout_summary"
             android:defaultValue="false" />
 
-        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
-            android:key="qs_layout_columns"
-            android:title="@string/qs_columns_portrait_title"
-            android:max="5"
-            settings:min="2"
-            settings:interval="1"
-            android:defaultValue="2" />
+        <com.android.settings.preferences.ui.AdaptivePreference
+            android:key="qs_layout_columns_rows"
+            android:title="@string/qs_layout_columns_rows_title"
+            android:summary="@string/qs_layout_columns_rows_summary"
+            android:fragment="com.crdroid.settings.fragments.quicksettings.LayoutSettings"
+            lineage:position="bottom"  />
 
-        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
-            android:key="qs_layout_columns_landscape"
-            android:title="@string/qs_columns_landscape_title"
-            android:max="5"
-            settings:min="2"
-            settings:interval="1"
-            android:defaultValue="4" />
-
-        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
-            android:key="qs_panel_row_count"
-            android:title="@string/qs_panel_row_count_title"
-            android:max="5"
-            settings:min="2"
-            settings:interval="1"
-            android:defaultValue="4" />
-            
-        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
-            android:key="qs_panel_row_count_landscape"
-            android:title="@string/qqs_rows_landscape_title"
-            android:max="4"
-            settings:min="1"
-            settings:interval="1"
-            android:defaultValue="2" />
-
-        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
-            android:key="qqs_layout_rows"
-            android:title="@string/qqs_rows_portrait_title"
-            android:max="3"
-            settings:min="1"
-            settings:interval="1"
-            android:defaultValue="2"
-            lineage:position="bottom" />
     </PreferenceCategory>
 
     <PreferenceCategory

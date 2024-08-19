@@ -1356,6 +1356,11 @@
     <string name="qqs_rows_portrait_title">Quick QS Rows (portrait)</string>
     <string name="qqs_rows_landscape_title">Quick QS Rows (landscape)</string>
     <string name="qs_panel_row_count_title">QS Rows (portrait)</string>
+    <string name="qs_rows_portrait_title">Rows (portrait)</string>
+    <string name="qs_rows_landscape_title">Rows (landscape)</string>
+    <string name="qs_layout_columns_rows_title">Columns &amp; rows</string>
+    <string name="qs_layout_columns_rows_summary">Customize QS columns and rows</string>
+    <string name="qs_layout_columns_rows_footer_text">QS rows should be equal or greater than QQS rows. Use higher number of columns for circle / square (A11) QS tile style.</string>
 
     <!-- Statusbar Clock background chip -->
     <string name="statusbar_clock_chip_title">Background chip</string>
