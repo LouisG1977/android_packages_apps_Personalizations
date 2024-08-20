@@ -24,6 +24,9 @@
     <string name="toast_spoofing_failure">Failed to spoof properties.</string>
     <string name="update_pif_json_title">Update Play Integrity Fix</string>
     <string name="update_pif_json_summary">Update PIF spoofing device, requires internet connection.</string>
+    <string name="show_pif_properties_title">Play Integrity Fix properties</string>
+    <string name="show_pif_properties_summary">Show all currently set PIF properties</string>
+    <string name="error_loading_properties">Error loading PIF properties</string>
 
     <!-- Power Mode tile -->
     <string name="power_mode_tile_label">Power Mode</string>

@@ -53,6 +53,12 @@
             android:defaultValue="true"/>
 
         <com.android.settings.preferences.ui.AdaptivePreference
+            android:key="show_pif_properties"
+            android:title="@string/show_pif_properties_title"
+            android:summary="@string/show_pif_properties_summary"
+            android:dependency="persist.sys.pixelprops.gms"/>
+
+        <com.android.settings.preferences.ui.AdaptivePreference
             android:key="update_pif_json"
             android:title="@string/update_pif_json_title"
             android:summary="@string/update_pif_json_summary"
